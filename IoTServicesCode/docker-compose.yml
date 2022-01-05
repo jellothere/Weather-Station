@@ -1,0 +1,70 @@
+version: '3'
+
+services:
+  message_broker:
+    build: message_broker
+    ports:
+      - '1883:1883'
+    volumes:
+      - ./message_broker/app/mosquitto.conf:/mosquitto/config/mosquitto.conf
+  mariaDB:
+    image: 'mariadb:latest'
+    environment:
+      - MYSQL_ROOT_PASSWORD=)fy=(`3u"Um%kk{Jr
+  devices_microservices:
+    build: microservices/devices_microservice
+    ports:
+      - '5002:5002'
+    links:
+      - "mariaDB:mariaDB"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=5002
+      - DBHOST=mariaDB
+      - DBUSER=iot_user
+      - DBPASSWORD=9R[-RP#64nY7*E*H
+      - DBDATABASE=iot_data
+    depends_on:
+      - mariaDB
+  measurements_microservice:
+    build: microservices/measurements_microservice
+    ports:
+      - '5001:5001'
+    links:
+      - "mariaDB:mariaDB"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=5001
+      - DBHOST=mariaDB
+      - DBUSER=iot_user
+      - DBPASSWORD=9R[-RP#64nY7*E*H
+      - DBDATABASE=iot_data
+    depends_on:
+      - mariaDB
+  message_router:
+    build: message_router
+    environment:
+      - BROKER_ADDRESS=35.195.219.145
+      - BROKER_PORT=1883
+      - BROKER_KEEP_ALIVE=60
+      - BROKER_USER=dso_server
+      - BROKER_PWD=dso_password
+      - MEASUREMENTS_MICROSERVICE_ADDRESS=35.241.129.25
+      - MEASUREMENTS_MICROSERVICE_PORT=5001
+      - DEVICES_MICROSERVICE_ADDRESS=35.241.129.25
+      - DEVICES_MICROSERVICE_PORT=5002
+  webapp_backend:
+    build: webapp_backend
+    ports:
+      - '5000:5000'
+    environment:
+      - MEASUREMENTS_MICROSERVICE_ADDRESS=35.241.129.25
+      - MEASUREMENTS_MICROSERVICE_PORT=5001
+      - DEVICES_MICROSERVICE_ADDRESS=35.241.129.25
+      - DEVICES_MICROSERVICE_PORT=5002
+      - HOST=0.0.0.0
+      - PORT=5000
+  webapp_frontend:
+    build: webapp_frontend
+    ports:
+      - '80:80'

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DSO - Interfaz de Usuario</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta charset="ISO-8859-1">
+</head>
+<body>
+
+    <header>
+        <div class="topbar">
+             <ul>
+                <li><a href="" class="text_gradient">HOME</a></li>
+                <li><a href="" class="text_gradient">ABOUT US</a></li> 
+                <li><a href="" class="text_gradient">CONTACT US</a></li>
+             </ul>
+        </div>
+    </header>
+    </br>
+
+    <div class = "div_measurements">
+        <h1 class="text_gradient">Measurements of the sensors</h1>
+    	<h2>Results of the measurements obtained by the sensors</h2>
+	<div class="current_device"><h3 class="text_gradient"> Device ID: </h3><span id="currentDevice"></span></div>
+        </br>
+
+	<div id="date_filter">
+    		<h2>Start<input type="date" step="1" id="start"></h2>
+    		<h2>End<input type="date" step="1" id="end"></h2>
+    		<!-- <button type="button" onclick="filterDate()" id="date_filter_button">Filter</button> -->
+    	</div>
+
+	<button type="button" onclick='goBack()' class="goback"><i class="gg-arrow-left"></i></button>
+	</br></br></br>	
+
+        <table class="sensor_measures result"></table>
+
+        </br></br></br>
+    </div>
+
+    <div class="div_devices">
+        <h1 class="text_gradient">List of devices</h1>
+	<h2>List of identifiers of the devices used</h2>
+	</br>
+        <table class="device_list result"></table>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js_lib.js"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+    <link href='https://css.gg/sun.css' rel='stylesheet'>
+    <link href='https://css.gg/drop.css' rel='stylesheet'>
+    <link href='https://css.gg/calendar-dates.css' rel='stylesheet'>
+    <link href='https://css.gg/data.css' rel='stylesheet'>
+    <link href='https://css.gg/arrow-align-h.css' rel='stylesheet'>
+    <link href='https://css.gg/arrow-align-v.css' rel='stylesheet'>
+    <link href='https://css.gg/arrow-left.css' rel='stylesheet'>
+    <link href='https://css.gg/check-o.css' rel='stylesheet'>
+</body>
+</html>

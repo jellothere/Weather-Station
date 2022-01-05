@@ -1,0 +1,257 @@
+body{
+	background-color: #f2f2f2;
+	font-family: 'Roboto', sans-serif;
+	padding-bottom: 40px;
+	width: 100%;
+	text-align: center;
+	padding-left: 30px;
+	padding-top: 10px;
+}
+
+.text_gradient {
+	background: linear-gradient(to right, #cb3066, #16bffd);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+  	text-fill-color: transparent;
+  	background-size: 200% auto;
+  	animation: gradient 7s ease-in-out infinite alternate;
+}
+
+
+h2{
+	font-size: 20px;
+	font-weight: bold;
+}
+
+
+table {
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #fafafa;
+	text-align: center;
+	width: 70%;
+	border-collapse: collapse;
+	border-radius: 5px;
+	overflow: hidden;
+	box-shadow: 0px 20px 20px #d7d7d7;
+}
+
+tr{
+	vertical-align: middle;
+  	align-items: center;
+}
+
+.topbar{
+	background: white;
+	margin-top: -20px;
+	margin-left: -20px;
+	margin-right: -20px;
+	padding-top: 40px;
+	padding-bottom: 30px;
+	padding-right: 30px;
+	padding-left: 30px;
+	text-align: center;
+	display: inline-block;
+	width: 100%;
+}
+
+li {
+	margin-left: 20px;
+	margin-right: 20px;
+	text-align: center;
+  	display: inline-block;
+}
+
+a {
+	font-weight: bolder;
+  	color: black;
+  	text-decoration: none;
+	padding: 6px;
+	position: relative;
+}
+
+a:after {
+  	bottom: 0;
+  	content: "";
+  	display: block;
+  	height: 3px;
+  	border-radius: 2px;
+  	left: 50%;
+  	position: absolute;
+  	background: rgb(195,20,50);
+	background: -webkit-linear-gradient(to right, #16bffd, #cb3066);
+  	background: linear-gradient(to right, #16bffd, #cb3066);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+  	transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  	width: 0;
+}
+
+a:hover{
+	color: grey;
+}
+
+a:hover:after {
+  	width: 100%; 
+  	left: 0; 
+}
+
+.row{
+	transition: .3s;
+}
+
+.row:hover{
+	text-align:center;
+	background-color: #abe9ff;
+}
+
+td{
+	padding: 15px;
+}
+
+th{
+	color: white;
+	align-items:center;
+	text-align: center;
+}
+
+.header_field{
+	display: inline-flex;
+   	align-items:center;
+   	text-align: center;
+   	margin-left: auto;
+   	margin-right: auto;
+   	padding: 10px;
+}
+
+i{
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.device{
+	display: inline-flex;
+   	align-items:center;
+   	text-align: center;
+   	margin-left: auto;
+   	margin-right: auto;
+   	padding: 10px;
+}
+
+.device_row{
+	transition: .5s;
+}
+
+.device_row:hover{
+	background: #efb4c9;	
+}
+
+.fields{
+	background: rgb(195,20,50);
+	background: -webkit-linear-gradient(to right, #16bffd, #cb3066);
+  	background: linear-gradient(to right, #16bffd, #cb3066);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+button {
+	font-weight: bolder;
+}
+
+.div_measurements {
+	display: none;
+}
+
+.measure{
+	background-color: black;
+	color: white;
+	border-radius: 100px;
+	padding: 10px;
+	border: none;
+	transition: .2s;
+}
+
+.measure:hover{
+	background-color: white;
+	color: black;
+	transform: scale(1.15);
+	box-shadow: 0px 5px 5px #BB98A5;
+}
+
+#date_filter_button{
+	background: black;
+	color: white;
+	box-shadow: 0px 5px 5px #d7d7d7;
+	border: none;
+	border-radius: 5px;
+	font-size: 20px;
+	padding: 7px;
+	width: 100px;
+	font-weight: normal;
+	transition: .3s;
+}
+
+#date_filter_button:hover{
+	transform: scale(1.15);
+	background: #F9F95F;
+	color: black;
+	border-radius: 100px;
+	border: 1px solid #CFCF50;
+}
+
+.goback{
+	float: left;
+	margin-left: 15%;
+	background: rgb(195,20,50);
+	background: -webkit-linear-gradient(to right, #cb3066, #16bffd);
+  	background: linear-gradient(to right, #cb3066, #16bffd);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	color: white;
+	border-radius: 100px;
+	border: none;
+	transition: .3s;
+}
+
+.goback:hover{
+	background: black;
+	transform: scale(1.15);
+	box-shadow: 0px 5px 5px #d7d7d7;
+}
+
+input{
+	padding: 10px;
+	border-radius: 100px;
+	margin-left: 10px;
+	border: 1px solid grey;
+	
+}
+
+h3{
+	padding-top: 20px;
+	display: inline;
+}
+
+span{
+	font-style: oblique;
+	display: inline;
+	font-size: 1.17em;
+}
+
+.current_device{
+	padding-top: 15px;
+	padding-bottom: 5px;
+}
